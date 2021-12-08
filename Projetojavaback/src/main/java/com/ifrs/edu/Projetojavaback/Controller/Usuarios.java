@@ -45,6 +45,8 @@ public class Usuarios {
         return usuarioDao.findAll();
     }
 
+
+
     ///// FAz a inserção do do usuário e verifica se o usuário já foi cadastrado ///
 
     @RequestMapping(path = "/usuarios/", method = RequestMethod.POST)
