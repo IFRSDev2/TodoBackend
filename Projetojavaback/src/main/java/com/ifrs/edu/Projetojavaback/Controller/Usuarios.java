@@ -36,3 +36,11 @@ public class Usuarios {
             throw new RequisicaoInvalida("Usuário tem que ter e-mail");
         }
     }
+
+
+    ///////////// LISTAR USUÁRIOS ////////////////////////
+
+    @RequestMapping(path = "/usuarios/", method = RequestMethod.GET)
+    public Iterable<Usuario> listar() {
+        return usuarioDao.findAll();
+    }
