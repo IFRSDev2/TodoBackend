@@ -80,6 +80,18 @@ public class Usuarios {
         }
     }
 
+//////////ATUALIZAR USUÁRIO PELA ID //////////////
+
+    @RequestMapping(path = "/usuarios/{id}", method = RequestMethod.PUT)
+    public void atualizar(@PathVariable int id, @RequestBody Usuario usuario){
+        if (usuarioDao.existsById(id)){
+            usuario.setId(id);
+            validaUsuario(usuario);
+            usuarioDao.save(usuario);
+        }else{
+            throw new NaoEncontrado("Usuário inexistente");
+        }
+    }
 
 
 
