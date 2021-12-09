@@ -93,7 +93,17 @@ public class Usuarios {
         }
     }
 
+///////////// APAGAR USUÁRIO PELA ID ////////////////////////
 
+    @RequestMapping(path = "/usuarios/{id}", method = RequestMethod.DELETE)
+    public void apagar(@PathVariable int id){
+        if (usuarioDao.existsById(id)){
+            usuarioDao.deleteById(id);
+        }else {
+            throw new NaoEncontrado("Usuário inexistente");
+        }
+
+    }
 
 
 }
