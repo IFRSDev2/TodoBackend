@@ -13,7 +13,7 @@ import com.ifrs.edu.Projetojavaback.Dao.UsuarioDAO;
 import com.ifrs.edu.Projetojavaback.Entidades.Usuario;
 import com.ifrs.edu.Projetojavaback.erros.NaoEncontrado;
 import com.ifrs.edu.Projetojavaback.erros.RequisicaoInvalida;
-
+import com.ifrs.edu.Projetojavaback.Dao.UsuarioDAO;
 
 @RestController
 @RequestMapping(path = "/api")
@@ -68,12 +68,17 @@ public class Usuarios {
         return usuarioDao.save(usuario);
     }
 
+///////// RECUPERAR USUÁRIO PELA ID ////////////
 
-
-
-
-
-
+    @RequestMapping(path = "/usuarios/{id}", method = RequestMethod.GET)
+    public Usuario recuperar(@PathVariable int id) {
+        Optional<Usuario> findById = usuarioDao.findById(id);
+        if (findById.isPresent()) {
+            return findById.get();
+        } else {
+            throw new NaoEncontrado("Usuário inexistente");
+        }
+    }
 
 
 
