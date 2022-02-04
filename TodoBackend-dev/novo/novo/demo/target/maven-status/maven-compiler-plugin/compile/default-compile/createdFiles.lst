@@ -1,0 +1,10 @@
+com\ifrs\edu\projetojavaback\DAO\UsuarioDAO.class
+com\ifrs\edu\projetojavaback\Projetojavaback.class
+com\ifrs\edu\projetojavaback\model\Usuario.class
+com\ifrs\edu\projetojavaback\erros\NaoEncontrado.class
+com\ifrs\edu\projetojavaback\auth\AuthConf.class
+com\ifrs\edu\projetojavaback\DAO\TarefaDAO.class
+com\ifrs\edu\projetojavaback\erros\RequisicaoInvalida.class
+com\ifrs\edu\projetojavaback\model\Tarefa.class
+com\ifrs\edu\projetojavaback\controller\Usuarios.class
+com\ifrs\edu\projetojavaback\controller\Tarefas.class
